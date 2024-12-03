@@ -5,6 +5,7 @@
     linesWithEmptyStrings = libStrings.splitString "\n" (builtins.readFile ./day-1.txt);
     lines = builtins.filter (line: line != "") linesWithEmptyStrings;
     unsortedLeftStrs = map (line: (builtins.head (builtins.split " " line))) lines;
+
     unsortedRightStrs = map (line: (libLists.last (builtins.split " " line))) lines;
     sortNums = (xs: builtins.sort builtins.lessThan xs);
     lefts = map libStrings.toInt (sortNums unsortedLeftStrs);
