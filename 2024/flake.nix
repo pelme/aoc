@@ -26,5 +26,14 @@
         inherit nixpkgs;
         file = ./day-3.txt;
       };
+      day-7 = (import ./day-7.nix) {
+        inherit nixpkgs;
+        file = ./day-7.txt;
+      };
+      day-7-example = (import ./day-7.nix) {
+        inherit nixpkgs;
+        file = ./day-7-example.txt;
+      };
+
     };
 }
